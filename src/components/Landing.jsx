@@ -61,8 +61,8 @@ const PinwheelLanding = () => {
             </button>
 
             <div className="hidden ml-auto lg:flex lg:items-center lg:justify-center lg:space-x-10">
-              <a
-                href="http://localhost:3000/dashboard"
+              <Link
+                href="/dashboard"
                 title=""
                 className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"
               >
