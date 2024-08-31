@@ -497,8 +497,8 @@ const PinwheelLanding = () => {
                 <p className="mt-4">
                   Discover how our collaborative spreadsheet platform can
                   transform your team&apos;s productivity. From real-time
-                  editing to advanced data analysis tools, we've got everything
-                  you need to excel.
+                  editing to advanced data analysis tools, we&apos;ve got
+                  everything you need to excel.
                 </p>
                 <button className="btn btn-white mt-6">Explore Features</button>
               </div>
