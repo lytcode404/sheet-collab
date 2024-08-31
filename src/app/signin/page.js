@@ -5,7 +5,7 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
 import { useRouter } from "next/navigation";
-const page = () => {
+const Page = () => {
   const router = useRouter();
   useEffect(() => {
     if(localStorage.getItem("user") && localStorage.getItem("accessToken")) {
@@ -55,8 +55,9 @@ const page = () => {
                 <h1 className="mb-4">Sing In</h1>
                 <p></p>
                 <div className="signin-options mt-10 w-5 h-5">
-                  
-                  <button onClick={handleGoogleSignIn}>Sign In With Google</button>
+                  <button onClick={handleGoogleSignIn}>
+                    Sign In With Google
+                  </button>
                 </div>
                 <div className="relative my-8 text-center after:absolute after:left-0 after:top-1/2 after:z-[0] after:w-full after:border-b after:border-border after:content-['']">
                   <span className="relative z-[1] inline-block bg-white px-2">
@@ -92,7 +93,7 @@ const page = () => {
                     defaultValue="Sign In"
                   />
                   <p className="mt-6 text-center">
-                    Can't{" "}
+                    Can&apos;t{" "}
                     <span className="text-dark" href="#">
                       log in
                     </span>
@@ -158,4 +159,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

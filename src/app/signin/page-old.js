@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <section className="">
@@ -54,7 +54,7 @@ const page = () => {
                     defaultValue="Sign In"
                   />
                   <p className="mt-6 text-center">
-                    Can't{" "}
+                    Can&apos;t{" "}
                     <span className="text-dark" href="#">
                       log in
                     </span>
@@ -120,4 +120,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

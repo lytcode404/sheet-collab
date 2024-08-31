@@ -45,7 +45,10 @@ const PinwheelLanding = () => {
             className="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5"
           >
             <li className="nav-item">
-              <a href="http://localhost:3000/dashboard" className="nav-link active">
+              <a
+                href="http://localhost:3000/dashboard"
+                className="nav-link active"
+              >
                 Home
               </a>
             </li>
@@ -497,9 +500,9 @@ const PinwheelLanding = () => {
                 </h2>
                 <p className="mt-4">
                   Discover how our collaborative spreadsheet platform can
-                  transform your team's productivity. From real-time editing to
-                  advanced data analysis tools, we've got everything you need to
-                  excel.
+                  transform your team&apos;s productivity. From real-time
+                  editing to advanced data analysis tools, we&apos;ve got
+                  everything you need to excel.
                 </p>
                 <button className="btn btn-white mt-6">Explore Features</button>
               </div>

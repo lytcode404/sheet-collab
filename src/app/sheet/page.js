@@ -3,7 +3,7 @@ import Sheet2 from "@/components/Sheet2";
 import TopBar from "@/components/Topbar";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <TopBar />
@@ -12,4 +12,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
