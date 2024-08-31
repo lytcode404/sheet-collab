@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 let socket;
 
 const Sheet2 = ({ roomId, username }) => {
-  const initialData = Array.from({ length: 50 }, () =>
+  const initialData = Array.from({ length: 20 }, () =>
     Array.from({ length: 15 }, () => "")
   );
 
@@ -16,7 +16,6 @@ const Sheet2 = ({ roomId, username }) => {
   const [isBold, setIsBold] = useState(false);
   const [isReadOnly, setIsReadOnly] = useState(false);
   const router = useRouter(); 
-  
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const isReadParam = urlParams.get('isRead');
@@ -27,7 +26,7 @@ const Sheet2 = ({ roomId, username }) => {
     if (!(localStorage.getItem('user') && localStorage.getItem('accessToken'))) {
       router.push('/signin');
     }
-    socket = io("https://backend-collabsheet-production.up.railway.app");
+    socket = io('http://localhost:3001');
     socket.emit('joinRoom', roomId);
     socket.emit('requestInitialData', roomId);
 
@@ -78,7 +77,7 @@ const Sheet2 = ({ roomId, username }) => {
   const evaluateExpression = (expression) => {
     try {
       if (/^[0-9+\-*/().\s]+$/.test(expression)) {
-        return eval(expression); 
+        return eval(expression); // Be cautious with eval
       }
 
       const sumMatch = expression.match(/^SUM\(([^)]+)\)$/);

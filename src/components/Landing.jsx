@@ -1,7 +1,9 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 
 const PinwheelLanding = () => {
+
   return (
     <>
     <div className="bg-gradient-to-b from-blue-50 to-blue-100">
@@ -58,13 +60,13 @@ const PinwheelLanding = () => {
             </button>
 
             <div className="hidden ml-auto lg:flex lg:items-center lg:justify-center lg:space-x-10">
-              <a
-                href="http://localhost:3000/dashboard"
-                title=""
+              <Link
+                
+                href="/dashboard"
                 className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"
               >
                 Home
-              </a>
+              </Link>
 
               <a
                 href="#features"
