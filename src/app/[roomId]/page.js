@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import TopBar from '@/components/TopBar';
+import TopBar from '@/components/Topbar';
 import Sheet2 from '@/components/Sheet2';
 
 export default function Room() {
