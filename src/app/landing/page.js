@@ -1,634 +1,358 @@
-'use client'
-import React from "react";
-
+'use client';
+import React from 'react';
 
 const PinwheelLanding = () => {
   return (
-    <div>
-      <header className="header bg-slate-400 shadow-xl">
-        <nav className="navbar container">
-          {/* logo */}
-          <div className="order-0">
-            <a href="index.html">
-              <img src="images/logo.svg" height={30} width={147} alt="logo" />
-            </a>
-          </div>
-          {/* navbar toggler */}
-          <input id="nav-toggle" type="checkbox" className="hidden" />
-          <label
-            id="show-button"
-            htmlFor="nav-toggle"
-            className="order-1 flex cursor-pointer items-center lg:order-1 lg:hidden"
-          >
-            <svg className="h-6 fill-current" viewBox="0 0 20 20">
-              <title>Menu Open</title>
-              <path d="M0 3h20v2H0V3z m0 6h20v2H0V9z m0 6h20v2H0V0z" />
-            </svg>
-          </label>
-          <label
-            id="hide-button"
-            htmlFor="nav-toggle"
-            className="order-2 hidden cursor-pointer items-center lg:order-1"
-          >
-            <svg className="h-6 fill-current" viewBox="0 0 20 20">
-              <title>Menu Close</title>
-              <polygon
-                points="11 9 22 9 22 11 11 11 11 22 9 22 9 11 -2 11 -2 9 9 9 9 -2 11 -2"
-                transform="rotate(45 10 10)"
-              />
-            </svg>
-          </label>
-          {/* /navbar toggler */}
-          <ul
-            id="nav-menu"
-            className="navbar-nav order-2 hidden w-full flex-[0_0_100%] lg:order-1 lg:flex lg:w-auto lg:flex-auto lg:justify-center lg:space-x-5"
-          >
-            <li className="nav-item">
-              <a href="" className="nav-link active">
+    <>
+    <div className="bg-gradient-to-b from-blue-50 to-blue-100">
+      <header className="">
+        <div className="px-4 mx-auto sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            <div className="flex-shrink-0">
+              <a href="#hero" title="" className="flex">
+                <img
+                  className="w-auto h-8"
+                  src=""
+                  alt="Logo"
+                /> Sheet Collab
+              </a>
+            </div>
+
+            <button
+              type="button"
+              className="inline-flex p-1 text-black transition-all duration-200 border border-black lg:hidden focus:bg-gray-100 hover:bg-gray-100"
+            >
+              {/* Menu open */}
+              <svg
+                className="block w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+
+              {/* Menu closed */}
+              <svg
+                className="hidden w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+
+            <div className="hidden ml-auto lg:flex lg:items-center lg:justify-center lg:space-x-10">
+              <a
+                href="http://localhost:3000/dashboard"
+                title=""
+                className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"
+              >
                 Home
               </a>
-            </li>
-            <li className="nav-item">
-              <a href="about.html" className="nav-link">
-                About
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="blog.html" className="nav-link">
-                Blog
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="features.html" className="nav-link">
+
+              <a
+                href="#features"
+                title=""
+                className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"
+              >
                 Features
               </a>
-            </li>
-            <li className="nav-item">
-              <a href="how-it-works.html" className="nav-link">
+
+              <a
+                href="#"
+                title=""
+                className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"
+              >
                 How It Works
               </a>
-            </li>
-            {/* <li className="nav-item nav-dropdown group relative">
-              <span className="nav-link inline-flex items-center">
-                Pages
-                <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                </svg>
-              </span>
-              <ul className="nav-dropdown-list hidden group-hover:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
-                <li className="nav-dropdown-item">
-                  <a href="career.html" className="nav-dropdown-link">
-                    Career
-                  </a>
-                </li>
-                <li className="nav-dropdown-item">
-                  <a href="career-single.html" className="nav-dropdown-link">
-                    Career Single
-                  </a>
-                </li>
-                <li className="nav-dropdown-item">
-                  <a href="integrations.html" className="nav-dropdown-link">
-                    Integrations
-                  </a>
-                </li>
-                <li className="nav-dropdown-item">
-                  <a
-                    href="integration-single.html"
-                    className="nav-dropdown-link"
-                  >
-                    Integration Single
-                  </a>
-                </li>
-                <li className="nav-dropdown-item">
-                  <a href="pricing.html" className="nav-dropdown-link">
-                    Pricing
-                  </a>
-                </li>
-                <li className="nav-dropdown-item">
-                  <a href="changelogs.html" className="nav-dropdown-link">
-                    Changelogs
-                  </a>
-                </li>
-                <li className="nav-dropdown-item">
-                  <a href="terms-conditions.html" className="nav-dropdown-link">
-                    Terms &amp; Conditions
-                  </a>
-                </li>
-              </ul>
-            </li> */}
-            <li className="nav-item">
-              <a href="contact.html" className="nav-link">
-                Contact
-              </a>
-            </li>
-            <li className="nav-item mt-3.5 lg:hidden">
+
               <a
-                className="btn btn-white btn-sm border-border"
-                href="signin.html"
+                href="#about"
+                title=""
+                className="text-base font-semibold text-black transition-all duration-200 hover:text-opacity-80"
               >
-                Sing Up Now
+                About
               </a>
-            </li>
-          </ul>
-          <div className="order-1 ml-auto hidden items-center md:order-2 md:ml-0 lg:flex">
-            <a className="btn btn-white btn-sm" href="signin.html">
-              Sing Up Now
-            </a>
+
+              <div className="w-px h-5 bg-black/20"></div>
+
+             
+              <a
+                href="signin.html"
+                title=""
+                className="inline-flex items-center justify-center px-5 py-2.5 text-base font-semibold text-black border-2 border-black hover:bg-black hover:text-white transition-all duration-200 focus:bg-black focus:text-white"
+                role="button"
+              >
+                Login / Sign-Up
+              </a>
+            </div>
           </div>
-        </nav>
+        </div>
       </header>
 
-      <section className="section banner relative">
-        <div className="container">
-          <div className="row items-center">
-            <div className="lg:col-6">
-              <h1 className="banner-title">
-                Revolutionize teamwork with our collaborative spreadsheet
-                platform
+      <section id="hero" className="py-10 sm:py-16 lg:py-24">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+            <div>
+              <h1 className="text-3xl font-bold text-black sm:text-6xl lg:text-5xl">
+              Revolutionize teamwork with our collaborative spreadsheet platform
+                <div className="relative inline-flex mt-7">
+                  <span className="absolute inset-x-0 bottom-0 border-b-[30px] border-[#1322c5]"></span>
+                  <h1 className="relative text-4xl font-bold text-black sm:text-6xl lg:text-6xl">
+                    SheetCollab
+                  </h1>
+                </div>
               </h1>
-              <p className="mt-6">
-                Experience seamless collaboration in real-time. Our intuitive
+
+              <p className="mt-8 text-base text-black sm:text-xl">
+              Experience seamless collaboration in real-time. Our intuitive
                 platform removes the hassle of sharing files and tracking
                 changes, allowing your team to focus on what matters most.
               </p>
-              <a className="btn btn-white mt-8" href="#">
-                Start Collaborating Now
-              </a>
+
+              <div className="mt-10 sm:flex sm:items-center sm:space-x-8">
+                <a
+                  href="signin.html"
+                  title=""
+                  className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-600"
+                  role="button"
+                >
+                  Start Collaborating Now
+                </a>
+              </div>
             </div>
-            <div className="lg:col-6">
+
+            <div>
               <img
-                className="w-full object-contain"
-                src="images/banner-img.png"
-                width={603}
-                height={396}
-                alt="Team collaborating on a spreadsheet"
+                className="w-full"
+                src="/features-banner-img.png"
+                alt="Hero"
               />
             </div>
           </div>
         </div>
-        <img
-          className="banner-shape absolute -top-28 right-0 -z-[1] w-full max-w-[30%]"
-          src="images/banner-shape.svg"
-          alt=""
-        />
       </section>
-      <section className="section key-feature relative">
-        <img
-          className="absolute left-0 top-0 -z-[1] -translate-y-1/2"
-          src="images/icons/feature-shape.svg"
-          alt=""
-        />
-        <div className="container">
-          <div className="row justify-between text-center lg:text-start">
-            <div className="lg:col-5">
-              <h2>Key Features of Our Collaborative Spreadsheet Solution</h2>
-            </div>
-            <div className="mt-6 lg:col-5 lg:mt-0">
-              <p>
-                Experience the power of real-time collaboration with our
+    </div>
+
+    <section id="features" className="py-12 bg-white sm:py-16 lg:py-20">
+    <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="text-center">
+            <h2 className="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl font-pj">Make every step user-centric</h2>
+            <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8 font-pj">Experience the power of real-time collaboration with our
                 innovative spreadsheet platform. Our solution offers seamless
                 teamwork, advanced data analysis, and intuitive features
-                designed to enhance your productivity.
-              </p>
-            </div>
-          </div>
-          <div className="key-feature-grid mt-10 grid grid-cols-2 gap-7 md:grid-cols-3 xl:grid-cols-4">
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Real-Time Editing</h3>
-                <p>
-                  Collaborate with your team in real-time, seeing changes
-                  instantly as they happen.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-1.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Smart Formulas</h3>
-                <p>
-                  Leverage intelligent formula suggestions to streamline your
-                  calculations.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-2.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Data Visualization</h3>
-                <p>
-                  Create stunning charts and graphs to visualize your data
-                  effectively.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-3.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Version History</h3>
-                <p>Track changes and revert to previous versions with ease.</p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-4.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Dark Mode</h3>
-                <p>
-                  Reduce eye strain with our sleek dark mode option for
-                  late-night work sessions.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-5.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Advanced Permissions</h3>
-                <p>
-                  Control access and editing rights for enhanced data security
-                  and collaboration.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-6.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Mobile Access</h3>
-                <p>
-                  Access and edit your spreadsheets on-the-go with our
-                  mobile-friendly interface.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-7.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Automated Backups</h3>
-                <p>
-                  Never lose your work with our automatic backup and recovery
-                  system.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-8.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Focus Mode</h3>
-                <p>
-                  Boost productivity by minimizing distractions with our focus
-                  mode feature.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-9.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-            <div className="flex flex-col justify-between rounded-lg bg-white p-5 shadow-lg">
-              <div>
-                <h3 className="h4 text-xl lg:text-2xl">Team Collaboration</h3>
-                <p>
-                  Seamlessly work together with integrated comments, mentions,
-                  and task assignments.
-                </p>
-              </div>
-              <span className="icon mt-4">
-                <img
-                  className="objec-contain"
-                  src="images/icons/feature-icon-10.svg"
-                  alt=""
-                />
-              </span>
-            </div>
-          </div>
+                designed to enhance your productivity.</p>
         </div>
-      </section>
-      <section className="section services">
-        <div className="container">
-          <div
-            className="tab row gx-5 items-center"
-            data-tab-group="integration-tab"
-          >
-            <div className="lg:col-7 lg:order-2">
-              <div className="tab-content" data-tab-content="">
-                <div className="tab-content-panel active" data-tab-panel={0}>
-                  <img
-                    className="w-full object-contain"
-                    src="images/sells-by-country.png"
-                  />
-                </div>
-                <div className="tab-content-panel" data-tab-panel={1}>
-                  <img
-                    className="w-full object-contain"
-                    src="images/collaboration.png"
-                  />
-                </div>
-                <div className="tab-content-panel" data-tab-panel={2}>
-                  <img
-                    className="w-full object-contain"
-                    src="images/sells-by-country.png"
-                  />
-                </div>
-              </div>
+
+        <div className="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-24">
+            <div className="md:p-8 lg:p-14">
+                <svg className="mx-auto" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M45 29V23C45 10.85 35.15 1 23 1C10.85 1 1 10.85 1 23V29" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M13 29H1V41C1 43.209 2.791 45 5 45H13V29Z" fill="#D4D4D8" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M45 29H33V45H41C43.209 45 45 43.209 45 41V29Z" fill="#D4D4D8" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Support</h3>
+                <p className="mt-5 text-base text-gray-600 font-pj">Collaborate with your team in real-time, seeing changes
+                instantly as they happen.</p>
             </div>
-            <div className="mt-6 lg:col-5 lg:order-1 lg:mt-0">
-              <div className="text-container">
-                <h2 className="lg:text-4xl">
-                  Enhance team productivity with seamless collaboration
-                </h2>
-                <p className="mt-4">
-                  Our platform empowers your team to create, edit, and share
-                  spreadsheets in real-time. With robust features and intuitive
-                  design, we ensure your collaborative experience is smooth and
-                  efficient.
-                </p>
-                <ul className="tab-nav -ml-4 mt-8 border-b-0" data-tab-nav="">
-                  <li className="tab-nav-item active" data-tab={0}>
-                    <img className="mr-3" src="images/icons/drop.svg" alt="" />
-                    Real-time editing and commenting
-                  </li>
-                  <li className="tab-nav-item" data-tab={1}>
-                    <img className="mr-3" src="images/icons/brain.svg" alt="" />
-                    Version history and change tracking
-                  </li>
-                  <li className="tab-nav-item" data-tab={2}>
-                    <img className="mr-3" src="images/icons/timer.svg" alt="" />
-                    Customizable permissions and sharing
-                  </li>
-                </ul>
-              </div>
+
+            <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200">
+                <svg className="mx-auto" width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M27 27H19V45H27V27Z" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 37H1V45H9V37Z" fill="#D4D4D8" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M45 17H37V45H45V17Z" fill="#D4D4D8" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M5 17L15 7L23 15L37 1" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M28 1H37V10" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Sales</h3>
+                <p className="mt-5 text-base text-gray-600 font-pj">Leverage intelligent formula suggestions to streamline your
+                calculations.</p>
             </div>
-          </div>
-          <div className="row gx-5 mt-12 items-center lg:mt-0">
-            <div className="lg:col-7">
-              <div className="relative">
-                <img
-                  className="w-full object-contain"
-                  src="images/collaboration.png"
-                />
-                <img
-                  className="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
-                  src="images/shape.svg"
-                  alt=""
-                />
-              </div>
+
+            <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200">
+                <svg className="mx-auto" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M41 1H1V41H41V1Z" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 7H7V20H18V7Z" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18 26H7V35H18V26Z" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M35 7H24V35H35V7Z" fill="#D4D4D8" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Onboarding</h3>
+                <p className="mt-5 text-base text-gray-600 font-pj">Create stunning charts and graphs to visualize your data
+                effectively.</p>
             </div>
-            <div className="mt-6 lg:col-5 lg:mt-0">
-              <div className="text-container">
-                <h2 className="lg:text-4xl">
-                  Collaborate across borders with our global platform
-                </h2>
-                <p className="mt-4">
-                  Our collaborative spreadsheet solution breaks down
-                  geographical barriers, allowing teams to work together
-                  seamlessly, no matter where they are in the world.
-                </p>
-                <ul className="mt-6 text-dark lg:-ml-4">
-                  <li className="mb-2 flex items-center rounded px-4">
-                    <img
-                      className="mr-3"
-                      src="images/icons/checkmark-circle.svg"
-                      alt=""
+
+            <div className="md:p-8 lg:p-14 md:border-t md:border-gray-200">
+                <svg className="mx-auto" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.66667 25H6C3.23858 25 1 27.2386 1 30V37C1 39.7614 3.23858 42 6 42H36C38.7614 42 41 39.7614 41 37V30C41 27.2386 38.7614 25 36 25H31.8333C30.2685 25 29 26.2685 29 27.8333C29 29.3981 27.7315 30.6667 26.1667 30.6667H15.3333C13.7685 30.6667 12.5 29.3981 12.5 27.8333C12.5 26.2685 11.2315 25 9.66667 25Z"
+                        fill="#D4D4D8"
                     />
-                    Support for over 100 countries worldwide
-                  </li>
-                  <li className="mb-2 flex items-center rounded px-4">
-                    <img
-                      className="mr-3"
-                      src="images/icons/checkmark-circle.svg"
-                      alt=""
+                    <path d="M9 9H33" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M9 17H33" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M1 25H13V31H29V25H41" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M37 1H5C2.79086 1 1 2.79086 1 5V37C1 39.2091 2.79086 41 5 41H37C39.2091 41 41 39.2091 41 37V5C41 2.79086 39.2091 1 37 1Z" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Product</h3>
+                <p className="mt-5 text-base text-gray-600 font-pj">Track changes and revert to previous versions with ease.</p>
+            </div>
+
+            <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200 md:border-t">
+                <svg className="mx-auto" width="46" height="42" viewBox="0 0 46 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M30.562 18.4609C30.0511 17.9392 29.4292 17.5392 28.7426 17.2907C28.0559 17.0422 27.3221 16.9516 26.5956 17.0256C25.8692 17.0996 25.1687 17.3362 24.5462 17.718C23.9237 18.0998 23.3952 18.6169 23 19.2309C22.6049 18.6167 22.0764 18.0995 21.4539 17.7176C20.8315 17.3357 20.1309 17.099 19.4044 17.025C18.6779 16.951 17.944 17.0417 17.2573 17.2903C16.5706 17.5389 15.9488 17.939 15.438 18.4609C14.5163 19.4035 14.0002 20.6695 14.0002 21.9879C14.0002 23.3063 14.5163 24.5722 15.438 25.5149L23 33.1999L30.564 25.5159C31.485 24.5726 32.0004 23.3064 32 21.988C31.9997 20.6696 31.4835 19.4037 30.562 18.4609Z"
+                        fill="#D4D4D8"
+                        stroke="#161616"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                     />
-                    Multiple currency and date format support
-                  </li>
-                  <li className="flex items-center rounded px-4">
-                    <img
-                      className="mr-3"
-                      src="images/icons/checkmark-circle.svg"
-                      alt=""
+                    <path
+                        d="M41 41H5C3.93913 41 2.92172 40.5786 2.17157 39.8284C1.42143 39.0783 1 38.0609 1 37V1H17L22 9H45V37C45 38.0609 44.5786 39.0783 43.8284 39.8284C43.0783 40.5786 42.0609 41 41 41Z"
+                        stroke="#161616"
+                        stroke-width="2"
+                        stroke-miterlimit="10"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
                     />
-                    24/7 customer support in 30+ languages
-                  </li>
-                </ul>
-              </div>
+                </svg>
+                <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Quality</h3>
+                <p className="mt-5 text-base text-gray-600 font-pj">Control access and editing rights for enhanced data security
+                and collaboration.</p>
             </div>
-          </div>
-          <div className="row gx-5 mt-12 items-center lg:mt-0">
-            <div className="lg:col-7 lg:order-2">
-              <div className="video pb-5 pr-9">
-                <div className="video-thumbnail overflow-hidden rounded-2xl">
-                  <img
-                    className="w-full object-contain"
-                    src="images/intro-thumbnail.png"
-                    alt=""
-                  />
-                  <button className="video-play-btn">
-                    <img src="images/icons/play-icon.svg" alt="" />
-                  </button>
-                </div>
-                <div className="video-player absolute left-0 top-0 z-10 hidden h-full w-full">
-                  <iframe
-                    className="h-full w-full"
-                    allowFullScreen=""
-                    src="https://www.youtube.com/embed/g3-VxLQO7do?autoplay=1"
-                  />
-                </div>
-                <img
-                  className="intro-shape absolute bottom-0 right-0 -z-[1]"
-                  src="images/shape.svg"
-                  alt=""
-                />
-              </div>
+
+            <div className="md:p-8 lg:p-14 md:border-l md:border-gray-200 md:border-t">
+                <svg className="mx-auto" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25 7C34.941 7 43 15.059 43 25C43 34.941 34.941 43 25 43C15.059 43 7 34.941 7 25" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M19 1C9.059 1 1 9.059 1 19H19V1Z" fill="#D4D4D8" stroke="#161616" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <h3 className="mt-12 text-xl font-bold text-gray-900 font-pj">Result</h3>
+                <p className="mt-5 text-base text-gray-600 font-pj">Reduce eye strain with our sleek dark mode option for
+                late-night work sessions.</p>
             </div>
-            <div className="mt-6 lg:col-5 lg:order-1 lg:mt-0">
-              <div className="text-container">
-                <h2 className="lg:text-4xl">
-                  Powerful features to supercharge your teamwork
-                </h2>
-                <p className="mt-4">
-                  Discover how our collaborative spreadsheet platform can
-                  transform your team&apos;s productivity. From real-time
-                  editing to advanced data analysis tools, we&apos;ve got
-                  everything you need to excel.
-                </p>
-                <button className="btn btn-white mt-6">Explore Features</button>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-      <footer className="footer bg-theme-light/50">
-        <div className="container">
-          <div className="row gx-5 pb-10 pt-[52px]">
-            <div className="col-12 mt-12 md:col-6 lg:col-3">
-              <a href="index.html">
-                <img src="images/logo.svg" alt="CollabSheet Logo" />
-              </a>
-              <p className="mt-6">
-                Empowering teams with real-time collaborative spreadsheets.
-                Streamline your workflow and boost productivity with
-                CollabSheet.
-              </p>
-            </div>
-            <div className="col-12 mt-12 md:col-6 lg:col-3">
-              <h6>Connect With Us</h6>
-              <p>support@collabsheet.com</p>
-              <ul className="social-icons mt-4 lg:mt-6">
-                <li>
-                  <a href="#" aria-label="Facebook">
-                    <svg
-                      width={19}
-                      height={21}
-                      viewBox="0 0 20 21"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M19.1056 10.4495C19.1056 5.09642 15 0.759277 9.9327 0.759277C4.86539 0.759277 0.759766 5.09642 0.759766 10.4495C0.759766 15.2946 4.08865 19.3191 8.49018 20.0224V13.2627H6.15996V10.4495H8.49018V8.33951C8.49018 5.91696 9.85872 4.54939 11.93 4.54939C12.9657 4.54939 14.0013 4.74476 14.0013 4.74476V7.12823H12.8547C11.7081 7.12823 11.3382 7.87063 11.3382 8.65209V10.4495H13.8904L13.4835 13.2627H11.3382V20.0224C15.7398 19.3191 19.1056 15.2946 19.1056 10.4495Z"
-                        fill="#222222"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-label="Twitter">
-                    <svg
-                      width={19}
-                      height={15}
-                      viewBox="0 0 19 15"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M16.3308 3.92621C17.0129 3.42889 17.6269 2.83209 18.1044 2.13583C17.4904 2.40108 16.7742 2.60001 16.0579 2.66632C16.8083 2.2353 17.354 1.5722 17.6269 0.743317C16.9447 1.14118 16.1603 1.43958 15.3758 1.60535C14.6937 0.909093 13.7728 0.51123 12.7496 0.51123C10.7714 0.51123 9.16837 2.06952 9.16837 3.99252C9.16837 4.25777 9.20248 4.52301 9.27069 4.78825C6.3034 4.62247 3.64307 3.22995 1.86952 1.14118C1.56256 1.63851 1.39202 2.2353 1.39202 2.8984C1.39202 4.09199 2.00595 5.15296 2.99504 5.7829C2.41523 5.74975 1.83541 5.61713 1.35792 5.35189V5.38504C1.35792 7.07596 2.58576 8.46847 4.22289 8.80002C3.95003 8.86633 3.60897 8.93265 3.302 8.93265C3.06326 8.93265 2.85862 8.89949 2.61987 8.86633C3.06326 10.2589 4.39342 11.2535 5.96233 11.2867C4.73449 12.215 3.19968 12.7786 1.52845 12.7786C1.22149 12.7786 0.948636 12.7455 0.675781 12.7123C2.24469 13.707 4.12057 14.2706 6.16698 14.2706C12.7496 14.2706 16.3308 8.99896 16.3308 4.39039C16.3308 4.22461 16.3308 4.09199 16.3308 3.92621Z"
-                        fill="#222222"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-label="LinkedIn">
-                    <svg
-                      width={19}
-                      height={16}
-                      viewBox="0 0 19 16"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M4.56609 15.2704V5.45315H0.948103V15.2704H4.56609ZM2.73764 4.1398C3.90474 4.1398 4.83841 3.31895 4.83841 2.33394C4.83841 1.38176 3.90474 0.59375 2.73764 0.59375C1.60945 0.59375 0.675781 1.38176 0.675781 2.33394C0.675781 3.31895 1.60945 4.1398 2.73764 4.1398ZM18.0654 15.2704H18.1044V9.8857C18.1044 7.259 17.4041 5.22331 13.7472 5.22331C11.9966 5.22331 10.8295 6.04415 10.3237 6.79933H10.2848V5.45315H6.82246V15.2704H10.4404V10.411C10.4404 9.13053 10.7128 7.91568 12.5801 7.91568C14.4475 7.91568 14.4864 9.36036 14.4864 10.5095V15.2704H18.0654Z"
-                        fill="#222222"
-                      />
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="#" aria-label="Skype">
-                    <svg
-                      width={19}
-                      height={18}
-                      viewBox="0 0 17 18"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M15.3829 10.554C15.4875 10.0381 15.5573 9.48523 15.5573 8.9324C15.5573 4.76772 12.3483 1.37701 8.40687 1.37701C7.88367 1.37701 7.36047 1.45072 6.87215 1.56129C6.20943 1.00846 5.37231 0.676758 4.50031 0.676758C2.33775 0.676758 0.59375 2.55639 0.59375 4.80458C0.59375 5.76282 0.87279 6.64735 1.39599 7.34761C1.29135 7.86359 1.22159 8.41642 1.22159 8.9324C1.22159 13.1339 4.43055 16.5246 8.37199 16.5246C8.89518 16.5246 9.41838 16.4509 9.9067 16.3404C10.5694 16.8932 11.4065 17.188 12.2785 17.188C14.4411 17.188 16.1851 15.3453 16.1851 13.0602C16.22 12.1388 15.9061 11.2543 15.3829 10.554ZM8.61615 13.9447C6.31407 13.9447 4.39567 12.8759 4.39567 11.5491C4.39567 10.9595 4.70959 10.4066 5.44207 10.4066C6.52335 10.4066 6.62799 12.0651 8.51151 12.0651C9.3835 12.0651 9.97646 11.6597 9.97646 11.1069C9.97646 10.4066 9.41838 10.2961 8.51151 10.0749C6.34895 9.48523 4.39567 9.2641 4.39567 6.86849C4.39567 4.65716 6.45359 3.84633 8.19759 3.84633C10.116 3.84633 12.0693 4.65716 12.0693 5.91024C12.0693 6.53679 11.6856 7.08962 11.0229 7.08962C10.0462 7.08962 10.0113 5.83653 8.40687 5.83653C7.49999 5.83653 6.94191 6.09452 6.94191 6.68421C6.94191 7.38446 7.67439 7.45818 9.34862 7.90044C10.7787 8.23214 12.5227 8.85869 12.5227 10.7383C12.5227 12.9128 10.5345 13.9447 8.61615 13.9447Z"
-                        fill="#222222"
-                      />
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-12 mt-12 md:col-6 lg:col-3">
-              <h6>Quick Links</h6>
-              <ul>
-                <li>
-                  <a href="features.html">Features</a>
-                </li>
-                <li>
-                  <a href="pricing.html">Pricing</a>
-                </li>
-                <li>
-                  <a href="testimonials.html">Testimonials</a>
-                </li>
-                <li>
-                  <a href="contact.html">Support</a>
-                </li>
-              </ul>
-            </div>
-            <div className="col-12 mt-12 md:col-6 lg:col-3">
-              <h6>Contact Us</h6>
-              <p>123 Collaboration Avenue, Tech Valley, CA 94123</p>
-              <p>+1 (555) 123-4567</p>
-            </div>
-          </div>
-        </div>
-        <div className="container max-w-[1440px]">
-          <div className="footer-copyright mx-auto border-t border-border pb-10 pt-7 text-center">
-            <p>
-              © 2024 CollabSheet. All rights reserved. |{" "}
-              <a href="privacy-policy.html" target="_blank">
-                Privacy Policy
-              </a>
-              {" | "}
-              <a href="terms-of-service.html" target="_blank">
-                Terms of Service
-              </a>
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
+</section>
+
+<section id ="about" className="py-10 bg-gray-50 sm:pt-16 lg:pt-24">
+    <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
+            <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
+                <img className="w-auto h-9" src="" alt="SheetCollab Logo" />
+
+                <p className="text-base leading-relaxed text-gray-600 mt-7"></p>
+
+                <ul className="flex items-center space-x-3 mt-9">
+                    <li>
+                        <a href="#" title="" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                            <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                            <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                            <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path>
+                                <circle cx="16.806" cy="7.207" r="1.078"></circle>
+                                <path
+                                    d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" className="flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600">
+                            <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+                                ></path>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">Company</p>
+
+                <ul className="mt-6 space-y-4">
+                    <li>
+                        <a href="#" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> About </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Features </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Works </a>
+                    </li>
+
+                    
+                </ul>
+            </div>
+
+            <div>
+                <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">Help</p>
+
+                <ul className="mt-6 space-y-4">
+                    <li>
+                        <a href="#" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Customer Support </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Delivery Details </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Terms & Conditions </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="" className="flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"> Privacy Policy </a>
+                    </li>
+                </ul>
+            </div>
+
+          
+        </div>
+
+        <hr className="mt-16 mb-10 border-gray-200" />
+
+        <p className="text-sm text-center text-gray-600">© Copyright 2021, All Rights Reserved by SheetCollab</p>
+    </div>
+</section>
+
+  </>  
   );
 };
 
