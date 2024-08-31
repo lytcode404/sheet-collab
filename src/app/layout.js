@@ -18,7 +18,7 @@ const ClientOnly = dynamic(
 );
 
 export const metadata = {
-  title: "PinWheel",
+  title: "SheetCollab",
   description: "A scalable collaborative spreadsheet",
 };
 
