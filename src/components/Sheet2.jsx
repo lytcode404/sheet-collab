@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 let socket;
 
 const Sheet2 = ({ roomId, username }) => {
-  const initialData = Array.from({ length: 20 }, () =>
+  const initialData = Array.from({ length: 50 }, () =>
     Array.from({ length: 15 }, () => "")
   );
 
@@ -26,7 +26,7 @@ const Sheet2 = ({ roomId, username }) => {
     if (!(localStorage.getItem('user') && localStorage.getItem('accessToken'))) {
       router.push('/signin');
     }
-    socket = io('http://localhost:3001');
+    socket = io('https://backend-collabsheet-production.up.railway.app');
     socket.emit('joinRoom', roomId);
     socket.emit('requestInitialData', roomId);
 
