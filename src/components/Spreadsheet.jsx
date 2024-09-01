@@ -16,7 +16,7 @@ const Spreadsheet = ({ data, onInputChange, onKeyDown, isBold }) => {
       <div className="inline-block min-w-full py-2 align-middle">
         <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
           <table className="min-w-full border-collapse">
-            <thead className="bg-gray-100">
+            <thead className="bg-gray-100 overflow-x-auto">
               <tr>
                 {/* Empty corner cell */}
                 <th className="border p-0 w-8 h-8 sticky top-0 bg-gray-100 z-10"></th>
@@ -38,7 +38,7 @@ const Spreadsheet = ({ data, onInputChange, onKeyDown, isBold }) => {
                     {rowIndex + 1}
                   </td>
                   {row.map((cell, colIndex) => (
-                    <td key={colIndex} className="border p-0">
+                    <td key={colIndex} className="border p-0 w-60 ">
                       <input
                         type="text"
                         value={cell} // Use the value from data

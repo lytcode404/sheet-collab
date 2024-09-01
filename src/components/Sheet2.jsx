@@ -8,8 +8,8 @@ import { useRouter } from "next/navigation";
 let socket;
 
 const Sheet2 = ({ roomId, username }) => {
-  const initialData = Array.from({ length: 50 }, () =>
-    Array.from({ length: 15 }, () => "")
+  const initialData = Array.from({ length: 10 }, () =>
+    Array.from({ length: 10 }, () => "")
   );
 
   const [data, setData] = useState(initialData);

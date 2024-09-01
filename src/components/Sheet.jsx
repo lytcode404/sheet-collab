@@ -8,7 +8,7 @@ let socket;
 
 const SpreadsheetComponent = ({ roomId, username }) => {
   const initialData = Array.from({ length: 50 }, () =>
-    Array.from({ length: 17 }, () => ({
+    Array.from({ length: 10 }, () => ({
       value: "",
       isBold: false,
       username: "",
